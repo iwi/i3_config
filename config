@@ -28,8 +28,8 @@ bindsym $mod+Shift+d exec rofi -show ssh -lines 4 -eh 2 -width 80 -opacity "85" 
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-font pango:Ubuntu Mono 8
+font pango:DejaVu Sans Mono 8
+# font pango:Ubuntu Mono 8
 
 
 # Key bindings
@@ -200,11 +200,14 @@ bindsym $mod+F12 scratchpad show
 bar {
         status_command i3status
         # position top
-        font Ubuntu Mono 9
-        # mode hide
+        font pango:DejaVu Sans Mono, Icons 5
+        # mode toggle
         # hidden_state hide
-        # modifier Mod4
+        # modifier $mod+F7
 }
+
+# bar toggle, hide or show 
+bindsym $mod+p bar mode toggle
 
 
 # Otheer mapping key-bindings
