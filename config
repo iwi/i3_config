@@ -232,7 +232,7 @@ exec "setxkbmap -option grp:switch,grp:caps_toggle,grp_led:caps gb,es"
 # }
 
  # Take a screenshot upon pressing $mod+x (select an area)
- bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
+ bindsym --release $mod+x exec --no-startup-id import ~/imatges/latest-screenshot.png
 
 
 
