@@ -5,12 +5,10 @@
 set $mod Mod4
 
 # Set DPI using xrandr
-exec xrandr --dpi 96
+exec xrandr --dpi 192
+
 
 # Start-up apps
-
-# Set background image
-exec --no-startup-id feh --bg-max ~/imatges/chihiro_mask2.png
 
 # network manager applet
 exec --no-startup-id nm-applet
@@ -19,21 +17,16 @@ exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 
 # bluetooth indicator
-exec --no-startup-id blueman-applet
-
-# Natural mouse scroll
-exec --no-startup-id synclient VertScrollDelta=-113
+exec --no-startup-id blueman
 
 
 # Start rofi (a program launcher)
-bindsym $mod+d exec rofi -show drun -lines 6 -eh 2 -width 50 -opacity "75" -bw 1 -bc "#000000" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu Mono 14" -dpi 0
-bindsym $mod+Shift+d exec rofi -show ssh -lines 4 -eh 2 -width 80 -opacity "85" -bw 0 -bc "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu Mono 8" -dpi 0
+bindsym $mod+d exec rofi -show drun -lines 4 -eh 2 -width 50 -opacity "75" -bw 0
+bindsym $mod+Shift+d exec rofi -show ssh -lines 4 -eh 2 -width 80 -opacity "85" -bw 0 -bc "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu Mono 16" -dpi 0
 # bindsym $mod+q exec rofi -show window -lines 4 -eh 2 -width 80 -opacity "85" -bw 0 -bc "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu Mono 16" -dpi 0 )
 
-
 # bluetooth controller
-bindsym $mod+n exec blueman-applet
-bindsym $mod+u exec volumeicon
+bindsym $mod+b exec "rfkill unblock bluetooth && bluetooth-wizard"
 
 # Looks
 
@@ -42,12 +35,7 @@ bindsym $mod+u exec volumeicon
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:Ubuntu Mono 8
-# font pango:DejaVu Sans Mono 5 
-
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:DejaVu Sans Mono 10
-font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
-font pango:Terminus 11px
+font pango:DejaVu Sans Mono 8
 
 # Name workspaces
 # assign [class="Firefox"] 1:ff
@@ -222,7 +210,7 @@ bindsym $mod+F12 scratchpad show
 bar {
         status_command i3status
         # position top
-        font pango:DejaVu Sans Mono, Icons 10
+        font pango:DejaVu Sans Mono, Icons 5
         # mode toggle
         # hidden_state hide
         # modifier $mod+F7
@@ -275,4 +263,4 @@ client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
 
 # Borders
-for_window [class="^.*"] border pixel 0
+# for_window [class="^.*"] border pixel 2
